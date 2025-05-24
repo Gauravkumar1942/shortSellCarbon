@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="surveycard.css">
+	<title>Survey Card</title>
+</head>
+<body>
+	<header>
+			<div class="logo"><h1>Short Sell Carbon</h1> </div>
+	</header>
+
+<div id="main_div">
+
+<section>
+	<h1>Flight</h1>
+	<h3>What is the average distance you travel using flight ?</h3>
+	<input type="number" name="" size="" id="flight" min="0">
+
+<select id="air">
+    
+    <option value="mile">Mile</option>
+    <option value="km">Km</option>
+    
+</select>
+<select id="airtime">
+    
+    <option value="daily">Daily</option>
+    <option value="weekly">Week</option>
+    <option value="monthly">Monthly</option>
+    <option value="yearly">Yearly</option>
+    
+</select>
+  <!-- <button>Skip</button> -->
+</section>
+
+
+
+<section>
+	<h1>Train</h1>
+	<h3>What is the average distance you travel using train ?</h3>
+	<input type="number" name="" id="train" min="0">
+
+<select id="rail_dist">
+    
+    <option value="mile">Mile</option>
+    <option value="km">Km</option>
+    
+</select>
+
+<select id="rail_time">
+    
+    <option value="daily">Daily</option>
+    <option value="week">Week</option>
+    <option value="month">Monthly</option>
+    <option value="yearly">Yearly</option>
+    
+</select>
+  <!-- <button>Skip</button> -->
+</section>
+
+
+
+
+<section>
+	<h1>Gasoline/Petrol</h1>
+	<h3>What is the average amount of gasoline or petrol you consume ?</h3>
+	<input type="number" name="" id="gas" min="0">
+
+	<select id="gas_volume">
+    
+    	<option value="litre">Litre</option>
+    	<option value="gallon">Gallon</option>
+    </select>
+
+<select id="gas_time">
+    
+    <option value="daily">Daily</option>
+    <option value="week">Week</option>
+    <option value="month">Monthly</option>
+    <option value="yearly">Yearly</option>
+    
+</select>
+  <!-- <button>Skip</button> -->
+</section>
+
+
+
+<section>
+	<h1>Source of Electricity</h1>
+	<h3>What is the source of your electricity production ?</h3>
+	<!-- <input type="" name="" id="electric_production"> -->
+
+<select id="elect_prod">
+    
+    <option value="coal">Coal</option>
+    <option value="natural gas">Natural Gas</option>
+    <option value="oil">Oil</option>
+    
+</select>
+  <!-- <button>Skip</button> -->
+</section>
+
+
+
+
+<section>
+	<h1>Electricity Usage</h1>
+	<h3>What is the average unit of electricity you consume ?</h3>
+	<input type="number" name="" id="electricity_usage" min="0">
+
+<select id="electusage">
+    
+     <option value="daily">Daily</option>
+    <option value="week">Week</option>
+    <option value="month">Monthly</option>
+    <option value="yearly">Yearly</option>
+    
+</select>
+  <!-- <button>Skip</button> -->
+</section>
+
+
+
+
+<section>
+	<h1>Chicken Meat</h1>
+	<h3>What is the average amount of chicken meat do you consume ?</h3>
+	<input type="number" name="" id="chicken" min="0">
+
+<select id="chick">
+    
+    <option value="kg">Kg</option>
+    <option value="g">gram</option>
+    
+</select>
+
+
+<select id="chicktime">
+    
+     <option value="daily">Daily</option>
+    <option value="week">Week</option>
+    <option value="month">Monthly</option>
+    <option value="yearly">Yearly</option>
+    
+</select>
+
+
+
+  <!-- <button>Skip</button> -->
+</section>
+
+
+
+
+<section>
+	<h1>Red Meat</h1>
+	<h3>What is the average amount of red meat do you consume ?</h3>
+	<input type="number" name="" id="red_meat" min="0">
+
+<select id="meat_red">
+    
+    <option value="kg">Kg</option>
+    <option value="g">gram</option>
+    
+</select>
+
+
+<select id="redmeattime">
+    
+     <option value="daily">Daily</option>
+    <option value="week">Week</option>
+    <option value="month">Monthly</option>
+    <option value="yearly">Yearly</option>
+    
+</select>
+
+  <!-- <button>Skip</button> -->
+</section>
+<br>
+<br>
+<br>
+
+
+
+<button onclick="submit_survey()">Submit</button>
+</div>
+
+<section class="result">
+		
+		<h2 id="result_head">You Emit</h2>
+		<ol>
+			<h3><span id ="daily"></span>&nbsp;&nbsp;<span>kgs of Carbon  &nbsp;&nbsp;</span>Daily</h3>
+			<h3><span id ="weekly"></span>&nbsp;&nbsp;<span>kgs of Carbon &nbsp;&nbsp;</span>Weekly</h3>
+			<h3><span id ="monthly"></span>&nbsp;&nbsp;<span>kgs of Carbon&nbsp;&nbsp;</span>Monthly</h3>
+			<h3><span id ="yearly"></span>&nbsp;&nbsp;<span>kgs of Carbon &nbsp;&nbsp;</span>Yearly</h3>
+		</ol>
+		
+
+	</section>
+	
+<script type="text/javascript">
+	function submit_survey()
+	{
+		   var f = document.getElementById('flight').value;
+		   var dist_flight = document.getElementById('air').value;
+		   if (dist_flight ==  'km')
+		   {
+		   		var output = f/1.06; // to convert the value in to mile .
+		   }
+		   else
+		   {
+		   	 var output  = f; // to keep the value in terms of mile 
+		   }
+
+		    var fperiod = document.getElementById('airtime').value;
+		    if (fperiod == 'weekly') 
+		    {
+		    	var real_1 = output/7;
+		    }
+		    else if (fperiod == "monthly") 
+		    {
+		    	var real_1 = output/30;
+		    }
+		    else if (fperiod == "yearly") 
+		    {
+		    	var real_1 = output/365;
+		    }
+		    else
+		    {
+		    	var real_1 = output;
+		    }
+		    
+		    // alert(real_1);
+		    var output = 0;
+		    
+
+
+
+		    // train research
+
+
+		    var f_train = document.getElementById('train').value;
+		   var dist_train = document.getElementById('rail_dist').value;
+		   if (dist_train ==  'km')
+		   {
+		   		var output = f_train/1.06;
+		   }
+		   else
+		   {
+		   	 var output  = f_train;
+		   }
+
+		    var t_period = document.getElementById('rail_time').value;
+		    if (t_period == 'week') { var real_2 = output/7;}
+		    else if (t_period == 'month') {var real_2 = output/30;}
+		    else if (t_period == 'yearly') {var real_2 = output/365;}
+		    else
+		    {
+		    	var real_2 = output;
+		    }
+		    // alert(real_2);
+		    var output = 0;
+
+		    // 	Gasoline Petrol
+
+		    var gas = document.getElementById('gas').value;
+		   var gas_vol = document.getElementById('gas_volume').value;
+		   if (gas_vol ==  'litre')
+		   {
+		   		var output = gas/3.8;
+		   }
+		   else
+		   {
+		   	 var output  = gas;
+		   }
+
+		    var gas_period = document.getElementById('gas_time').value;
+		    if (gas_period == 'week') { var real_3 = output/7;}
+		    else if (gas_period == 'month') {var real_3 = output/30;}
+		    else if (gas_period == 'yearly') {var real_3 = output/365;}
+		    else
+		    {
+		    	var real_3 = output;
+		    }
+		    // alert(real_3);
+		    var output = 0;
+
+
+		    // Source of Electricity 
+
+
+		    var elec_source = document.getElementById('elect_prod').value;
+		    if (elec_source == "coal") 
+		    	{
+		    	// alert("Coal");
+		    	 var koyla = 1
+		    	}
+		    if (elec_source == "natural gas") 
+		    	{
+		    		// alert("Natural Gas");
+		    		 var cylinder = 1;
+		    	}
+		    if (elec_source == "oil") 
+		    {
+		    	// alert("Oil");
+		    	 var tell = 1;
+		    }
+
+
+		    // Electricity usage
+
+		    var elec = document.getElementById('electricity_usage').value;
+		   // var dist_train = document.getElementById('rail_dist').value;
+		   // if (dist_train ==  'km')
+		   // {
+		   // 		var output = f_train/1.06;
+		   // }
+		   // else
+		   // {
+		   // 	 var output  = f_train;
+		   // }
+
+		    var elect_unit = document.getElementById('electusage').value;
+		    if (elect_unit == 'week') { var real_4 = elec/7;}
+		    else if (elect_unit == 'month') {var real_4 = elec/30;}
+		    else if (elect_unit == 'yearly') {var real_4 = elec/365;}
+		    else
+		    {
+		    	var real_4 = elec;
+		    }
+		    // alert(real_4);
+		    var output = 0;
+
+		    // Chicken Meat Info
+
+		    var chicken = document.getElementById('chicken').value;
+		   var chick_vol = document.getElementById('chick').value;
+		   if (chick_vol ==  'gram')
+		   {
+		   		var output = chicken/1000;
+		   }
+		   else
+		   {
+		   	 var output  = chicken;
+		   }
+
+		    var chicken_period = document.getElementById('chicktime').value;
+		    if (chicken_period == 'week') { var real_5 = output/7;}
+		    else if (chicken_period == 'month') {var real_5 = output/30;}
+		    else if (chicken_period == 'yearly') {var real_5 = output/365;}
+		    else
+		    {
+		    	var real_5 = output;
+		    }
+		    // alert(real_5);
+		    var output = 0;
+
+
+		    // Red Meat Info
+
+		   var rm = document.getElementById('red_meat').value;
+		   var rm_vol = document.getElementById('meat_red').value;
+		   if (rm_vol ==  'gram')
+		   {
+		   		var output = rm/1000;
+		   }
+		   else
+		   {
+		   	 var output  = rm;
+		   }
+
+		    var rm_period = document.getElementById('redmeattime').value;
+		    if (rm_period == 'week') { var real_6 = output/7;}
+		    else if (rm_period == 'month') {var real_6 = output/30;}
+		    else if (rm_period == 'yearly') {var real_6 = output/365;}
+		    else
+		    {
+		    	var real_6 = output;
+		    }
+		    // alert(real_6);
+		    var output = 0;
+		    
+		    if (koyla == 1) 
+		    	{
+		    		var resultt = (real_1*0.2)+(real_2*0.43)+(real_3*8.81)+(real_4*0.469)+(real_5*3.7)+(real_6*27);
+		    	}
+
+		    if (cylinder == 1) 
+		    	{
+		    		var resultt = (real_1*0.2)+(real_2*0.43)+(real_3*8.81)+(real_4*0.25)+(real_5*3.7)+(real_6*27);
+		    	}	
+		    
+
+		    if (tell == 1) 
+		    	{
+		    		var resultt = (real_1*0.2)+(real_2*0.43)+(real_3*8.81)+(real_4*0.426)+(real_5*3.7)+(real_6*27);
+		    	}	
+
+		    	var result = resultt.toFixed(0);
+		    // alert(result);
+		    document.getElementById('daily').innerText = result;
+		    document.getElementById('weekly').innerText = result*7;
+		    document.getElementById('monthly').innerText = result*30;
+		    document.getElementById('yearly').innerText = result*365;
+		    
+		    document.getElementById('main_div').style.display = 'none';
+		    var show_result = document.getElementsByClassName('result');
+		    show_result[0].style.display = 'block';
+
+   		// location.href = "submitsurvey.html";
+   	
+	}
+</script>
+</body>
+</html>
