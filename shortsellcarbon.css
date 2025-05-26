@@ -37,7 +37,7 @@ header .logo
  color: white;
  margin-left: 50px;
  text-transform: uppercase;
- letter-spacing: -3px;
+ /*letter-spacing: -3px;*/
 }/*
 h2
 {
@@ -59,7 +59,7 @@ h2
 
 p
 {
-position: fixed;
+position: absolute;
 left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
@@ -69,16 +69,18 @@ transform: translate(-50%, -50%);
 
 	font-family: cursive;
 	text-align: center;
-	font-size: 20px;
-    font-size: 5000;
-    font-weight: 1000;
+	font-size: 10px;
+    font-size: 25px;
+    font-weight: 300;
     color: white;
     /*margin-top: 20%;
     margin-left: 20%;
     margin-right: 20%;*/
 
 /*    position: absolute;*/
-    letter-spacing: 2px;
+    /*letter-spacing: 2px;*/
+    margin-bottom: 25px;
+    width: 66%;
 
 
 }
@@ -96,16 +98,13 @@ p
 
 
 
-.design
-{
-	margin-bottom: 20px;
-}
+
 
 
 
 button 
 {
-	position: fixed;
+	position: absolute;
 left: 50%;
 /*top: 50%;*/
 transform: translate(-50%, -50%);
@@ -114,19 +113,19 @@ transform: translate(-50%, -50%);
 
 
  font-family: monospace;
-	border-radius: 10px;
+	border-radius: 5px;
 	color: white;
 	border: none;
 padding-left: 5px;
 padding-right:5px;
-background-color: red;
+background-color: deepskyblue;
    
 	font-size: 25px;
  bottom: 0;
    margin-bottom: 7%;
     /*margin-left: 40%;
      position: absolute;*/
-    letter-spacing:1px;
+    /*letter-spacing:0.5px;*/
 }
 
 
@@ -219,7 +218,8 @@ background-color: red;
 	{
 /*		margin-left: 32%;*/
 		margin-bottom: 7%;
-	font-size: 40px;
+		margin-top: 20px;
+	font-size: 25px;
 
 	}
 }
